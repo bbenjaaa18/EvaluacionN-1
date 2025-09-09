@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore - Evaluación</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <!-- Encabezado y Navegación -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="navbar-brand" onclick="showPage('inicio')">
+                    <span>🛒 TechStore</span>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="#" class="nav-link" onclick="showPage('inicio')"><span>🏠</span> Inicio</a></li>
+                    <li><a href="#" class="nav-link" onclick="showPage('productos')"><span>📦</span> Productos</a></li>
+                    <li><a href="#" class="nav-link" onclick="showPage('contacto')"><span>📞</span> Contacto</a></li>
+                    <li><a href="#" class="nav-link" onclick="showPage('registro')"><span>👤</span> Registro</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Sección de Inicio -->
+        <section id="inicio" class="page-section active">
+            <div class="hero-section">
+                <div class="container">
+                    <h1 class="hero-title">Bienvenido a TechStore</h1>
+                    <p class="hero-description">Tu tienda de tecnología de confianza con los mejores productos al mejor precio. Encuentra lo último en tecnología con nosotros.</p>
+                    <a href="#" class="btn" onclick="showPage('productos')">Ver Productos</a>
+                </div>
+            </div>
+
+            <div class="container">
+                <h2 class="section-title">✨ Productos Destacados</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-image">📱</div>
+                        <div class="product-info">
+                            <h3 class="product-title">Smartphone Pro Max</h3>
+                            <p class="product-description">Último modelo con cámara avanzada de 108MP y procesador de última generación.</p>
+                            <div class="product-price">$899</div>
+                            <button class="btn">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">🎧</div>
+                        <div class="product-info">
+                            <h3 class="product-title">Audífonos Wireless Pro</h3>
+                            <p class="product-description">Audífonos inalámbricos con cancelación de ruido activa y 30hrs de batería.</p>
+                            <div class="product-price">$299</div>
+                            <button class="btn">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">💻</div>
+                        <div class="product-info">
+                            <h3 class="product-title">Laptop Gaming Pro</h3>
+                            <p class="product-description">Laptop de alto rendimiento para gaming y trabajo profesional.</p>
+                            <div class="product-price">$1299</div>
+                            <button class="btn">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Productos -->
+        <section id="productos" class="page-section">
+            <div class="container">
+                <h2 class="section-title">📦 Todos Nuestros Productos</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-image">📱</div>
+                        <div class="product-info">
+                            <h3 class="product-title">Smartphone Pro Max</h3>
+                            <p class="product-description">Último modelo con cámara avanzada de 108MP y procesador de última generación.</p>
+                            <div class="product-price">$899</div>
+                            <button class="btn">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">🎧</div>
+                        <div class="product-info">
+                            <h3 class="product-title">Audífonos Wireless Pro</h3>
+                            <p class="product-description">Audífonos inalámbricos con cancelación de ruido activa y 30hrs de batería.</p>
+                            <div class="product-price">$299</div>
+                            <button class="btn">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">💻</div>
+                        <div class="product-info">
+                            <h3 class="product-title">Laptop Gaming Pro</h3>
+                            <p class="product-description">Laptop de alto rendimiento para gaming y trabajo profesional.</p>
+                            <div class="product-price">$1299</div>
+                            <button class="btn">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">🖥️</div>
+                        <div class="product-info">
+                            <h3 class="product-title">Monitor 4K Ultra</h3>
+                            <p class="product-description">Monitor 27" 4K con HDR10 y 144Hz para gaming y diseño profesional.</p>
+                            <div class="product-price">$599</div>
+                            <button class="btn">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">⌨️</div>
+                        <div class="product-info">
+                            <h3 class="product-title">Teclado Mecánico RGB</h3>
+                            <p class="product-description">Teclado mecánico gaming con switches Cherry MX e iluminación RGB personalizable.</p>
+                            <div class="product-price">$149</div>
+                            <button class="btn">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">🖱️</div>
+                        <div class="product-info">
+                            <h3 class="product-title">Mouse Gaming Pro</h3>
+                            <p class="product-description">Mouse gaming inalámbrico con sensor óptico de 25,000 DPI y batería de 70hrs.</p>
+                            <div class="product-price">$89</div>
+                            <button class="btn">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Contacto -->
+        <section id="contacto" class="page-section">
+            <div class="container">
+                <h2 class="section-title">📞 Contáctanos</h2>
+                <div class="form-container">
+                    <form id="contact-form" novalidate>
+                        <div class="form-group">
+                            <label for="contactName" class="form-label">Nombre Completo</label>
+                            <input type="text" class="form-control" id="contactName" required>
+                            <div class="invalid-feedback">Por favor ingresa tu nombre completo.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail" class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="contactEmail" required>
+                            <div class="invalid-feedback">Por favor ingresa un correo electrónico válido.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactSubject" class="form-label">Asunto</label>
+                            <input type="text" class="form-control" id="contactSubject" required>
+                            <div class="invalid-feedback">Por favor ingresa el asunto de tu mensaje.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage" class="form-label">Mensaje</label>
+                            <textarea class="form-control" id="contactMessage" rows="5" required></textarea>
+                            <div class="invalid-feedback">Por favor ingresa tu mensaje.</div>
+                        </div>
+                        <button type="submit" class="btn">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Registro -->
+        <section id="registro" class="page-section">
+            <div class="container">
+                <h2 class="section-title">👤 Crear Cuenta</h2>
+                <div class="form-container">
+                    <form id="registration-form" novalidate>
+                        <div class="form-group">
+                            <label for="regName" class="form-label">Nombre Completo</label>
+                            <input type="text" class="form-control" id="regName" required>
+                            <div class="invalid-feedback">Por favor ingresa tu nombre completo.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="regEmail" class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="regEmail" required>
+                            <div class="invalid-feedback">Por favor ingresa un correo electrónico válido.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="regPassword" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="regPassword" required minlength="8">
+                            <div class="invalid-feedback">La contraseña debe tener al menos 8 caracteres.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="regConfirmPassword" class="form-label">Confirmar Contraseña</label>
+                            <input type="password" class="form-control" id="regConfirmPassword" required>
+                            <div class="invalid-feedback">Las contraseñas no coinciden.</div>
+                        </div>
+                        <button type="submit" class="btn">Registrarse</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 TechStore. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Función para mostrar la página seleccionada
+        function showPage(pageId) {
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+        }
+
+        // Validación del formulario de registro
+        document.getElementById('registration-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const form = this;
+            const regName = document.getElementById('regName');
+            const regEmail = document.getElementById('regEmail');
+            const regPassword = document.getElementById('regPassword');
+            const regConfirmPassword = document.getElementById('regConfirmPassword');
+            
+            let isValid = true;
+            
+            // Validar nombre
+            if (regName.value.trim() === '') {
+                regName.classList.add('is-invalid');
+                isValid = false;
+            } else {
+                regName.classList.remove('is-invalid');
+            }
+
+            // Validar email
+            if (!regEmail.checkValidity()) {
+                regEmail.classList.add('is-invalid');
+                isValid = false;
+            } else {
+                regEmail.classList.remove('is-invalid');
+            }
+
+            // Validar contraseña
+            if (regPassword.value.length < 8) {
+                regPassword.classList.add('is-invalid');
+                isValid = false;
+            } else {
+                regPassword.classList.remove('is-invalid');
+            }
+
+            // Validar confirmación de contraseña
+            if (regConfirmPassword.value !== regPassword.value || regConfirmPassword.value.trim() === '') {
+                regConfirmPassword.classList.add('is-invalid');
+                isValid = false;
+            } else {
+                regConfirmPassword.classList.remove('is-invalid');
+            }
+
+            if (isValid) {
+                alert('¡Registro exitoso! Bienvenido a TechStore.');
+                form.reset();
+            }
+        });
+
+        // Validación del formulario de contacto
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const form = this;
+            const contactName = document.getElementById('contactName');
+            const contactEmail = document.getElementById('contactEmail');
+            const contactSubject = document.getElementById('contactSubject');
+            const contactMessage = document.getElementById('contactMessage');
+            
+            let isValid = true;
+            
+            // Validar nombre
+            if (contactName.value.trim() === '') {
+                contactName.classList.add('is-invalid');
+                isValid = false;
+            } else {
+                contactName.classList.remove('is-invalid');
+            }
+
+            // Validar email
+            if (!contactEmail.checkValidity()) {
+                contactEmail.classList.add('is-invalid');
+                isValid = false;
+            } else {
+                contactEmail.classList.remove('is-invalid');
+            }
+
+            // Validar asunto
+            if (contactSubject.value.trim() === '') {
+                contactSubject.classList.add('is-invalid');
+                isValid = false;
+            } else {
+                contactSubject.classList.remove('is-invalid');
+            }
+
+            // Validar mensaje
+            if (contactMessage.value.trim() === '') {
+                contactMessage.classList.add('is-invalid');
+                isValid = false;
+            } else {
+                contactMessage.classList.remove('is-invalid');
+            }
+
+            if (isValid) {
+                alert('¡Mensaje enviado! Nos pondremos en contacto contigo pronto.');
+                form.reset();
+            }
+        });
+
+        // Mostrar la página de inicio al cargar
+        document.addEventListener('DOMContentLoaded', function() {
+            showPage('inicio');
+        });
+    </script>
+</body>
+</html>
