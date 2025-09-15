@@ -20,6 +20,8 @@
                     <li><a href="#" class="nav-link" onclick="showPage('productos')"><span>📦</span> Productos</a></li>
                     <li><a href="#" class="nav-link" onclick="showPage('contacto')"><span>📞</span> Contacto</a></li>
                     <li><a href="#" class="nav-link" onclick="showPage('registro')"><span>👤</span> Registro</a></li>
+                    <!-- 🔹 Carrito agregado -->
+                    <li><a href="#" class="nav-link" id="cart-btn">🛒 Carrito (<span id="cart-count">0</span>)</a></li>
                 </ul>
             </nav>
         </div>
@@ -46,8 +48,8 @@
                         <div class="product-info">
                             <h3 class="product-title">Smartphone Pro Max</h3>
                             <p class="product-description">Último modelo con cámara avanzada de 108MP y procesador de última generación.</p>
-                            <div class="product-price">$899</div>
-                            <button class="btn">Agregar al Carrito</button>
+                            <div class="product-price">499990</div>
+                            <button class="btn add-to-cart">Agregar al Carrito</button>
                         </div>
                     </div>
                     <div class="product-card">
@@ -57,8 +59,8 @@
                         <div class="product-info">
                             <h3 class="product-title">Audífonos Wireless Pro</h3>
                             <p class="product-description">Audífonos inalámbricos con cancelación de ruido activa y 30hrs de batería.</p>
-                            <div class="product-price">$299</div>
-                            <button class="btn">Agregar al Carrito</button>
+                            <div class="product-price">199990</div>
+                            <button class="btn add-to-cart">Agregar al Carrito</button>
                         </div>
                     </div>
                     <div class="product-card">
@@ -68,8 +70,8 @@
                         <div class="product-info">
                             <h3 class="product-title">Laptop Gaming Pro</h3>
                             <p class="product-description">Laptop de alto rendimiento para gaming y trabajo profesional.</p>
-                            <div class="product-price">$1299</div>
-                            <button class="btn">Agregar al Carrito</button>
+                            <div class="product-price">599990</div>
+                            <button class="btn add-to-cart">Agregar al Carrito</button>
                         </div>
                     </div>
                 </div>
@@ -88,8 +90,8 @@
                         <div class="product-info">
                             <h3 class="product-title">Smartphone Pro Max</h3>
                             <p class="product-description">Último modelo con cámara avanzada de 108MP y procesador de última generación.</p>
-                            <div class="product-price">$899</div>
-                            <button class="btn">Agregar al Carrito</button>
+                            <div class="product-price">499990</div>
+                            <button class="btn add-to-cart">Agregar al Carrito</button>
                         </div>
                     </div>
                     <div class="product-card">
@@ -99,8 +101,8 @@
                         <div class="product-info">
                             <h3 class="product-title">Audífonos Wireless Pro</h3>
                             <p class="product-description">Audífonos inalámbricos con cancelación de ruido activa y 30hrs de batería.</p>
-                            <div class="product-price">$299</div>
-                            <button class="btn">Agregar al Carrito</button>
+                            <div class="product-price">199990</div>
+                            <button class="btn add-to-cart">Agregar al Carrito</button>
                         </div>
                     </div>
                     <div class="product-card">
@@ -110,8 +112,8 @@
                         <div class="product-info">
                             <h3 class="product-title">Laptop Gaming Pro</h3>
                             <p class="product-description">Laptop de alto rendimiento para gaming y trabajo profesional.</p>
-                            <div class="product-price">$1299</div>
-                            <button class="btn">Agregar al Carrito</button>
+                            <div class="product-price">599990</div>
+                            <button class="btn add-to-cart">Agregar al Carrito</button>
                         </div>
                     </div>
                     <div class="product-card">
@@ -121,8 +123,8 @@
                         <div class="product-info">
                             <h3 class="product-title">Monitor 4K Ultra</h3>
                             <p class="product-description">Monitor 27" 4K con HDR10 y 144Hz para gaming y diseño profesional.</p>
-                            <div class="product-price">$599</div>
-                            <button class="btn">Agregar al Carrito</button>
+                            <div class="product-price">699990</div>
+                            <button class="btn add-to-cart">Agregar al Carrito</button>
                         </div>
                     </div>
                     <div class="product-card">
@@ -132,8 +134,8 @@
                         <div class="product-info">
                             <h3 class="product-title">Teclado Mecánico RGB</h3>
                             <p class="product-description">Teclado mecánico gaming con switches Cherry MX e iluminación RGB personalizable.</p>
-                            <div class="product-price">$149</div>
-                            <button class="btn">Agregar al Carrito</button>
+                            <div class="product-price">149990</div>
+                            <button class="btn add-to-cart">Agregar al Carrito</button>
                         </div>
                     </div>
                     <div class="product-card">
@@ -143,8 +145,8 @@
                         <div class="product-info">
                             <h3 class="product-title">Mouse Gaming Pro</h3>
                             <p class="product-description">Mouse gaming inalámbrico con sensor óptico de 25,000 DPI y batería de 70hrs.</p>
-                            <div class="product-price">$89</div>
-                            <button class="btn">Agregar al Carrito</button>
+                            <div class="product-price">99990</div>
+                            <button class="btn add-to-cart">Agregar al Carrito</button>
                         </div>
                     </div>
                 </div>
@@ -216,12 +218,21 @@
         </section>
     </main>
 
+    <!-- 🔹 Panel de Carrito agregado -->
+    <div id="cart" class="cart-panel">
+        <h3>🛒 Tu Carrito</h3>
+        <ul id="cart-items"></ul>
+        <p>Total: <span id="cart-total">$0</span></p>
+        <button class="btn" id="clear-cart">Vaciar Carrito</button>
+    </div>
+
     <footer>
         <div class="container">
-            <p>&copy; 2024 TechStore. Todos los derechos reservados.</p>
+            <p>&copy; 2025 TechStore. Todos los derechos reservados.</p>
         </div>
     </footer>
 
+    <!-- Script con formato chileno -->
     <script>
         // Función para mostrar la página seleccionada
         function showPage(pageId) {
@@ -243,31 +254,24 @@
             
             let isValid = true;
             
-            // Validar nombre
             if (regName.value.trim() === '') {
                 regName.classList.add('is-invalid');
                 isValid = false;
             } else {
                 regName.classList.remove('is-invalid');
             }
-
-            // Validar email
             if (!regEmail.checkValidity()) {
                 regEmail.classList.add('is-invalid');
                 isValid = false;
             } else {
                 regEmail.classList.remove('is-invalid');
             }
-
-            // Validar contraseña
             if (regPassword.value.length < 8) {
                 regPassword.classList.add('is-invalid');
                 isValid = false;
             } else {
                 regPassword.classList.remove('is-invalid');
             }
-
-            // Validar confirmación de contraseña
             if (regConfirmPassword.value !== regPassword.value || regConfirmPassword.value.trim() === '') {
                 regConfirmPassword.classList.add('is-invalid');
                 isValid = false;
@@ -291,32 +295,24 @@
             const contactMessage = document.getElementById('contactMessage');
             
             let isValid = true;
-            
-            // Validar nombre
             if (contactName.value.trim() === '') {
                 contactName.classList.add('is-invalid');
                 isValid = false;
             } else {
                 contactName.classList.remove('is-invalid');
             }
-
-            // Validar email
             if (!contactEmail.checkValidity()) {
                 contactEmail.classList.add('is-invalid');
                 isValid = false;
             } else {
                 contactEmail.classList.remove('is-invalid');
             }
-
-            // Validar asunto
             if (contactSubject.value.trim() === '') {
                 contactSubject.classList.add('is-invalid');
                 isValid = false;
             } else {
                 contactSubject.classList.remove('is-invalid');
             }
-
-            // Validar mensaje
             if (contactMessage.value.trim() === '') {
                 contactMessage.classList.add('is-invalid');
                 isValid = false;
@@ -330,9 +326,74 @@
             }
         });
 
-        // Mostrar la página de inicio al cargar
+        // Mostrar inicio al cargar
         document.addEventListener('DOMContentLoaded', function() {
             showPage('inicio');
+            // Formatear precios de productos
+            document.querySelectorAll(".product-price").forEach(priceEl => {
+                let value = parseInt(priceEl.innerText);
+                priceEl.innerText = formatPrice(value);
+            });
+        });
+
+        // Formato CLP
+        function formatPrice(value) {
+            return "$" + value.toLocaleString("es-CL");
+        }
+
+        // Carrito
+        const cartBtn = document.getElementById("cart-btn");
+        const cartPanel = document.getElementById("cart");
+        const cartCount = document.getElementById("cart-count");
+        const cartItems = document.getElementById("cart-items");
+        const cartTotal = document.getElementById("cart-total");
+        const clearCartBtn = document.getElementById("clear-cart");
+        let cart = [];
+
+        cartBtn.addEventListener("click", () => {
+            cartPanel.classList.toggle("active");
+        });
+
+        document.querySelectorAll(".add-to-cart").forEach(btn => {
+            btn.addEventListener("click", (e) => {
+                const productCard = e.target.closest(".product-card");
+                const title = productCard.querySelector(".product-title").innerText;
+                const priceText = productCard.querySelector(".product-price").innerText.replace(/\D/g, "");
+                const price = parseInt(priceText);
+
+                const existing = cart.find(item => item.title === title);
+                if (existing) {
+                    existing.quantity++;
+                } else {
+                    cart.push({ title, price, quantity: 1 });
+                }
+                updateCart();
+            });
+        });
+
+        function updateCart() {
+            cartItems.innerHTML = "";
+            let total = 0;
+            cart.forEach(item => {
+                total += item.price * item.quantity;
+                const li = document.createElement("li");
+                li.innerHTML = `
+                    ${item.title} - ${formatPrice(item.price)} x ${item.quantity}
+                    <button class="remove-btn">❌</button>
+                `;
+                li.querySelector(".remove-btn").addEventListener("click", () => {
+                    cart = cart.filter(p => p.title !== item.title);
+                    updateCart();
+                });
+                cartItems.appendChild(li);
+            });
+            cartTotal.innerText = formatPrice(Math.round(total));
+            cartCount.innerText = cart.reduce((sum, i) => sum + i.quantity, 0);
+        }
+
+        clearCartBtn.addEventListener("click", () => {
+            cart = [];
+            updateCart();
         });
     </script>
 </body>
