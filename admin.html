@@ -7,7 +7,21 @@
     <link rel="shortcut icon" href="https://previews.123rf.com/images/sommersby/sommersby1510/sommersby151000546/46335210-white-flat-shopping-cart-icon-on-a-green-background-vector-illustration.jpg">
     
     <link rel="stylesheet" href="stylesa.css">
+    <style>
+        /* Estilos adicionales para mejorar la apariencia */
+        .admin-user {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .btn-small {
+            padding: 8px 12px;
+            font-size: 14px;
+        }
+    </style>
 </head>
+
 <body>
     <div id="loginScreen" class="login-container">
         <div class="login-card">
@@ -35,17 +49,20 @@
             </form>
             
             <div id="loginAlert" class="alert alert-danger" style="display: none; margin-top: 1rem;">
-                Credenciales incorrectas. Usa: admin / admin
+                Credenciales incorrectas. Usa: admin
             </div>
         </div>
     </div>
 
-    <div id="adminPanel" class="admin-panel">
+    <div id="adminPanel" class="admin-panel" style="display: none;">
         <header class="admin-header">
             <nav class="admin-nav">
                 <div class="admin-logo">🛒 TechStore Admin</div>
                 <div class="admin-user">
                     <span>👤 Administrador</span>
+                    <button class="btn btn-success btn-small" onclick="goHome(index.html)">
+                        🏠 Volver al Inicio
+                    </button>
                     <button class="btn btn-secondary btn-small" onclick="logout()">
                         🚪 Cerrar Sesión
                     </button>
@@ -109,7 +126,8 @@
                             </tr>
                         </thead>
                         <tbody id="productsTableBody">
-                            </tbody>
+                            <!-- Los productos se cargarán aquí -->
+                        </tbody>
                     </table>
                 </div>
             </section>
@@ -130,7 +148,8 @@
                             </tr>
                         </thead>
                         <tbody id="usersTableBody">
-                            </tbody>
+                            <!-- Los usuarios se cargarán aquí -->
+                        </tbody>
                     </table>
                 </div>
             </section>
@@ -154,13 +173,15 @@
                             </tr>
                         </thead>
                         <tbody id="adminsTableBody">
-                            </tbody>
+                            <!-- Los administradores se cargarán aquí -->
+                        </tbody>
                     </table>
                 </div>
             </section>
         </main>
     </div>
 
+    <!-- Modales para productos y administradores -->
     <div id="productModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -254,6 +275,34 @@
     </div>
 
     <script>
+        // ===== FUNCIONES PARA LOS BOTONES DE ADMINISTRADOR =====
+        
+        // Función para volver a la página de inicio (index.html)
+        function goHome() {
+            // Redirigir a la página principal
+            window.location.href = 'index.html';
+        }
+        
+        // Función para cerrar sesión
+        function logout() {
+            // Limpiar cualquier dato de sesión si existe
+            if (typeof(Storage) !== "undefined") {
+                localStorage.removeItem('adminLoggedIn');
+                sessionStorage.removeItem('adminSession');
+            }
+            
+            // Mostrar mensaje de confirmación
+            alert('Sesión cerrada correctamente');
+            
+            // Redirigir al formulario de login
+            document.getElementById('loginScreen').style.display = 'flex';
+            document.getElementById('adminPanel').style.display = 'none';
+            document.getElementById('loginForm').reset();
+            document.getElementById('loginAlert').style.display = 'none';
+        }
+
+        // ===== RESTAURAR EL CÓDIGO ORIGINAL (con pequeñas mejoras) =====
+        
         // Datos simulados en memoria
         let products = [
             {
@@ -331,6 +380,11 @@
             
             if (isValid) {
                 if (username === 'admin' && password === 'admin') {
+                    // Guardar estado de login
+                    if (typeof(Storage) !== "undefined") {
+                        localStorage.setItem('adminLoggedIn', 'true');
+                    }
+                    
                     document.getElementById('loginScreen').style.display = 'none';
                     document.getElementById('adminPanel').style.display = 'block';
                     loadDashboard();
@@ -365,13 +419,6 @@
             const errorSpan = document.getElementById(fieldName + 'Error');
             field.classList.remove('error');
             errorSpan.textContent = '';
-        }
-
-        function logout() {
-            document.getElementById('loginScreen').style.display = 'flex';
-            document.getElementById('adminPanel').style.display = 'none';
-            document.getElementById('loginForm').reset();
-            document.getElementById('loginAlert').style.display = 'none';
         }
 
         // Navegación del menú
@@ -712,7 +759,16 @@
         
         // Cargar datos iniciales al cargar la página
         document.addEventListener('DOMContentLoaded', () => {
-            loadDashboard();
+            // Verificar si ya está logueado
+            if (typeof(Storage) !== "undefined" && localStorage.getItem('adminLoggedIn') === 'true') {
+                document.getElementById('loginScreen').style.display = 'none';
+                document.getElementById('adminPanel').style.display = 'block';
+                loadDashboard();
+            } else {
+                document.getElementById('loginScreen').style.display = 'flex';
+                document.getElementById('adminPanel').style.display = 'none';
+            }
+            
             loadProducts();
             loadUsers();
             loadAdmins();
